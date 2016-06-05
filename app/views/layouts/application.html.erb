@@ -6,7 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+
+<header class="header">
+ <div class="header__bar row">
+      <h1 class="grid-6"><a href="/">Protospace</a></h1>
+  <% if user_signed_in? %>
+    <div class="user_nav grid-6">
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <a class="post" href="/projects/new">NEW PROTO</a>
+    </div>
+  <% else %>
+    <div class="grid-6">
+      <%= link_to "GET STARTED", new_user_registration_path, class: 'post' %>
+    </div>
+  <% end %>
+ </div>
+</header>
 
 <%= yield %>
 
