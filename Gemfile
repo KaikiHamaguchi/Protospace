@@ -46,5 +46,7 @@ group :development do
   gem 'bootstrap-sass', '~> 3.3.1'
   gem 'sass-rails', '~> 5.0'
   gem 'devise'
+  gem 'haml-rails'
+
 end
 
