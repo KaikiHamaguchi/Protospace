@@ -45,5 +45,6 @@ group :development do
   gem 'spring'
   gem 'bootstrap-sass', '~> 3.3.1'
   gem 'sass-rails', '~> 5.0'
+  gem 'haml-rails'
 end
 
