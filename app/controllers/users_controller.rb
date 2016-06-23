@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(update_params)
-       redirect_to root_path, flash: { success: 'Yes!! Success' }
+       redirect_to user_path, flash: { success: 'Yes!! Success' }
     else
        redirect_to edit_user_path, flash: { danger: 'Invalid Email' }
     end
