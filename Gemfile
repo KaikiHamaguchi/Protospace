@@ -47,6 +47,7 @@ group :development do
   gem 'spring'
   gem 'devise'
   gem 'haml-rails'
+  gem 'carrierwave'
 
 end
 
