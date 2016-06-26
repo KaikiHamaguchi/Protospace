@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+    @user = User.new
+    @user.projects.build
+  end
+
   def edit
   end
 
