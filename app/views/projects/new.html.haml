@@ -8,18 +8,18 @@
         .row
           .col-md-12
             .cover-image-upload
-              = f.fields_for :thumbnails do |t|
-                = t.file_field :image_url
+              = f.fields_for :thumbnails do |thumbnails_form|
+                = thumbnails_form.file_field :image_url
           .col-md-12
             %ul.proto-sub-list.list-group
               %li.list-group-item.col-md-4
                 .image-upload
-                = f.fields_for :thumbnails do |t|
-                  =t.file_field :image_url
+                  = f.fields_for :thumbnails do |thumbnails_form|
+                    = thumbnails_form.file_field :image_url
               %li.list-group-item.col-md-4
                 .image-upload
-                = f.fields_for :thumbnails do |t|
-                  =t.file_field :image_url
+                  = f.fields_for :thumbnails do |thumbnails_form|
+                    = thumbnails_form.file_field :image_url
               %li.list-group-item.col-md-4
                 .image-upload-plus
                   %span +
