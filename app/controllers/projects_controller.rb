@@ -13,7 +13,12 @@ class ProjectsController < ApplicationController
 
   private
   def params_project
-    params.require(:project).permit(:title, :catch_copy, :concept, thumbnails_attributes: [:image_url, :classification])
+    params.require(:project).permit(
+      :title,
+      :catch_copy,
+      :concept,
+      thumbnails_attributes:[:image_url, :status]
+      ).merge(user_id: current_user.id)
   end
 
 end
