@@ -27,7 +27,7 @@ DB設計
 
 * project belongs_to :user
 * project has_many   :comments
-* project has_many   :project_Images
+* project has_many   :Thumbnails
 * project has_many   :likes
 
 ###column
@@ -41,11 +41,11 @@ DB設計
 * t.references :likes_id
 
 
-## Project_Images_table
+## Thumbnail_table
 
 ###association
 
-* Project_Images belongs_to :project
+* Thumbnails belongs_to :project
 
 ### column
 

@@ -1,8 +1,7 @@
 class Project < ActiveRecord::Base
-    project belongs_to :user
-    project has_many :comments
-    project has_many :project_Images
-    project has_many :likes
+  belongs_to   :user
+    has_many   :thumbnails
+    has_many   :comments
+    accepts_nested_attributes_for :thumbnails
 
-    validates :user_id
 end
