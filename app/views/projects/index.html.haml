@@ -12,26 +12,7 @@
           = link_to 'Newest PROTO', '#'
       = button_tag 'View Tags', type: "button", class: "btn btn-default col-lg-1"
 
-.container.proto-list
-  .row
-    - @project.each do |project|
-      .col-sm-4.col-md-3.proto-content
-        .thumbnail
-          = link_to '/projects/show' do
-            = image_tag("sample.png")
-            .caption
-              = project.title
-              .proto-meta
-                .proto-user
-                  = link_to project.user.name, user_path(current_user)
-                .proto-posted
-                  Apr 26
-              %ul.proto-tag-list.list-inline
-                %li
-                  = link_to 'iPad', '#', class: "btn btn-default"
-                %li
-                  = link_to 'wireframe', '#', class: "btn btn-default"
-
+= render "layouts/thumbnail"
 .text-center
   %ul.pagination
     %li.active
