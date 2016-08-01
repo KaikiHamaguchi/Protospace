@@ -22,19 +22,16 @@
       = image_tag @project.thumbnails.find_by(status: "0")
     .col-md-3
       %ul.proto-sub-list.list-group
-        %li.list-group-item
-          = image_tag @project.thumbnails.find_by(status: "1")
-        %li.list-group-item
-          = image_tag @project.thumbnails.find_by(status: "1")
+      - @projects.each do |project|
         %li.list-group-item
           = image_tag @project.thumbnails.find_by(status: "1")
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
-      %p
+      = @project.catch_copy
     .col-md-6
       %h4 Concept
-      %p
+      = @project.concept
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
