@@ -3,10 +3,10 @@
     - @projects.each do |project|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
-          = link_to 'prpject_path' do
+          = link_to project_path(project.user.id) do
             = image_tag(project.thumbnails.find_by(status: "0"))
             .caption
-              = project.title
+              = link_to project.title, project_path(project.user.id)
               .proto-meta
                 .proto-user
                   = link_to project.user.name, user_path(project.user.id)
