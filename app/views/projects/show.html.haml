@@ -19,12 +19,13 @@
         %span.num 20
   .row
     .col-md-9
-      = image_tag @project.thumbnails.find_by(status: "0")
+      = image_tag @project.thumbnails.find_by(status: "0").image_url
     .col-md-3
       %ul.proto-sub-list.list-group
-      - @projects.each do |project|
+      - @project.thumbnails.each do |thum|
         %li.list-group-item
-          = image_tag @project.thumbnails.find_by(status: "1")
+          -if image_tag thum.status == 1
+            = image_tag thum.image_url, :class => "img-responsive"
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
