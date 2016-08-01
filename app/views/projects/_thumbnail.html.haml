@@ -1,0 +1,20 @@
+.container.proto-list
+  .row
+    - @projects.each do |project|
+      .col-sm-4.col-md-3.proto-content
+        .thumbnail
+          = link_to 'prpject_path' do
+            = image_tag(project.thumbnails.find_by(status: "0"))
+            .caption
+              = project.title
+              .proto-meta
+                .proto-user
+                  = link_to project.user.name, user_path(project.user.id)
+                .proto-posted
+                  Apr 26
+              %ul.proto-tag-list.list-inline
+                %li
+                  = link_to 'iPad', '#', class: "btn btn-default"
+                %li
+                  = link_to 'wireframe', '#', class: "btn btn-default"
+
