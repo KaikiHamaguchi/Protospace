@@ -4,7 +4,7 @@
       .col-sm-4.col-md-3.proto-content
         .thumbnail
           = link_to project_path(project.user.id) do
-            = image_tag(project.thumbnails.find_by(status: "0"))
+            = image_tag(project.thumbnails.find_by(status: "0").image_url)
             .caption
               = link_to project.title, project_path(project.user.id)
               .proto-meta
