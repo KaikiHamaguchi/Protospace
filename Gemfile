@@ -48,6 +48,7 @@ group :development do
   gem 'devise'
   gem 'haml-rails'
   gem 'carrierwave'
+  gem 'pry-rails'
 
 end
 
