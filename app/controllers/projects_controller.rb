@@ -16,6 +16,14 @@ class ProjectsController < ApplicationController
     @project  = Project.find(params[:id])
   end
 
+  def destroy
+    project = Project.find(params[:id])
+    if project.user_id == current_user.id
+       project.destroy
+    end
+    redirect_to projects_path, notice: 'Prototype was successfully deleted.'
+  end
+
   private
   def params_project
     params.require(:project).permit(
