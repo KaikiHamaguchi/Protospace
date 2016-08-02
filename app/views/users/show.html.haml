@@ -21,27 +21,28 @@
             %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 .container.proto-list
   .row
-    .col-sm-4.col-md-3.proto-content
-      .dropdown.drop_menu_location
-        %button#dropdownMenu.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"} Action
-        %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
-          %li
-            %a{"data-method" => "delete", :href => "", :rel => "nofollow"} Delete
-          %li
-            %a{:href => ""} Edit
-      .thumbnail
-        %a{href: ""}
-          = image_tag("sample.png")
-        .caption
-          %h3 Salvation Army on iPad App Wireframe
-          .proto-meta
-            .proto-date
-              Apr 26
-          %ul.proto-tag-list.list-inline
+    - @project.each do |project|
+      .col-sm-4.col-md-3.proto-content
+        .dropdown.drop_menu_location
+          %button#dropdownMenu.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"} Action
+          %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
             %li
-              %a{href: "#", class: "btn btn-default"} iPad
+              %a{"data-method" => "delete", :href => "", :rel => "nofollow"} Delete
             %li
-              %a{href: "#", class: "btn btn-default"} wireframe
+              %a{:href => ""} Edit
+        .thumbnail
+          = link_to project_path(project) do
+            = image_tag project.thumbnails.find_by(status: "0").image_url
+          .caption
+            %h3 Salvation Army on iPad App Wireframe
+            .proto-meta
+              .proto-date
+                Apr 26
+            %ul.proto-tag-list.list-inline
+              %li
+                %a{href: "#", class: "btn btn-default"} iPad
+              %li
+                %a{href: "#", class: "btn btn-default"} wireframe
 
 .text-center
   %ul.pagination
