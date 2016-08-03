@@ -10,7 +10,7 @@
             .cover-image-upload
               = f.fields_for :thumbnails do |thumbnails_form|
                 = thumbnails_form.file_field :image_url
-                = thumbnails_form.hidden_field :status, :value => "mein"
+                = thumbnails_form.hidden_field :status, :value => "main"
           .col-md-12
             %ul.proto-sub-list.list-group
               %li.list-group-item.col-md-4

@@ -29,7 +29,7 @@
             %li
               = link_to 'Delete',project_path,{:method => :delete ,:rel => "nofollow" }
             %li
-              = link_to 'Edit', edit_project_path
+              = link_to 'Edit', edit_project_path(project)
         .thumbnail
           = link_to project_path(project) do
             = image_tag project.thumbnails.find_by(status: "0").image_url
