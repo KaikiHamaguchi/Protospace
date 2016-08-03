@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+
+  before_action :set_project, only: [:show, :destroy, :edit, :update]
+
   def index
     @projects = Project.all
   end
@@ -13,29 +16,28 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project  = Project.find(params[:id])
   end
 
   def destroy
-    project = Project.find(params[:id])
-    if project.user_id == current_user.id
-       project.destroy
+    if @project.user_id == current_user.id
+       @project.destroy
     end
     redirect_to projects_path, notice: 'Prototype was successfully deleted.'
   end
 
   def edit
-    @project = Project.find(params[:id])
   end
 
   def update
-    project = Project.find(params[:id])
-    if project.user_id == current_user.id
-       project.update(params_project)
+    if @project.user_id == current_user.id
+       @project.update(params_project)
     end
     redirect_to projects_path, notice: 'Prototype was successfully updated.'
   end
 
+  def set_project
+    @project  = Project.find(params[:id])
+  end
   private
   def params_project
     params.require(:project).permit(
