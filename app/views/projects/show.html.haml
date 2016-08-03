@@ -22,10 +22,10 @@
       = image_tag @project.thumbnails.find_by(status: "0").image_url, :class => "img-responsive"
     .col-md-3
       %ul.proto-sub-list.list-group
-      - @project.thumbnails.each do |thum|
-        %li.list-group-item
-          -if image_tag thum.status == 1
-            = image_tag thum.image_url, :class => "img-responsive"
+        - @project.thumbnails.each do |thum|
+          - if thum.status == "sub"
+            %li.list-group-item
+              = image_tag thum.image_url, :class => "img-responsive"
   .row.proto-description
     .col-md-3
       %h4 Catch Copy

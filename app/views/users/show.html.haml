@@ -27,9 +27,9 @@
           %button#dropdownMenu.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"} Action
           %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
             %li
-              %a{"data-method" => "delete", :href => "", :rel => "nofollow"} Delete
+              = link_to 'Delete',project_path,{:method => :delete ,:rel => "nofollow" }
             %li
-              %a{:href => ""} Edit
+              = link_to 'Edit', edit_project_path
         .thumbnail
           = link_to project_path(project) do
             = image_tag project.thumbnails.find_by(status: "0").image_url
