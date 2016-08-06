@@ -16,6 +16,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @comment = @project.comments.build
+    @comments = Comment.all
   end
 
   def destroy
@@ -35,10 +37,12 @@ class ProjectsController < ApplicationController
     redirect_to projects_path, notice: 'Prototype was successfully updated.'
   end
 
+
+  private
   def set_project
     @project  = Project.find(params[:id])
   end
-  private
+
   def params_project
     params.require(:project).permit(
       :title,
