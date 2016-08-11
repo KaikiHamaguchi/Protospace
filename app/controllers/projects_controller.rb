@@ -13,11 +13,13 @@ class ProjectsController < ApplicationController
 
   def create
     Project.create(params_project)
+    redirect_to projects_path
   end
 
   def show
     @comment = @project.comments.build
     @comments = Comment.all
+    @like = Like.find_by(user_id: current_user.id)
   end
 
   def destroy
