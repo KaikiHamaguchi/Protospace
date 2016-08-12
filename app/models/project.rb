@@ -5,7 +5,11 @@
     has_many :likes, dependent: :destroy
     accepts_nested_attributes_for :thumbnails
 
-  def like_user(user_id)
+    validates :title, presence: true
+    validates :catch_copy, presence: true
+    validates :concept, presence: true
+
+  def like_user(user)
    likes.find_by(user_id: user_id)
   end
 end

@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-
   before_action :set_project, only: [:create, :destroy]
 
   def create

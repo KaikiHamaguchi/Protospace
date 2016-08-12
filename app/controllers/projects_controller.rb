@@ -12,14 +12,18 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    Project.create(params_project)
-    redirect_to projects_path
+    @project = Project.new(params_project)
+    if @project.save
+      redirect_to projects_path, notice: 'Prototype was successfully create'
+    else
+      render :new
+    end
   end
 
   def show
     @comment = @project.comments.build
     @comments = Comment.all
-    @like = Like.find_by(user_id: current_user.id)
+    @like = Like.find_by(project_id: params[:project_id])
   end
 
   def destroy
