@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @project = Project.where(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update

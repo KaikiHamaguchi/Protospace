@@ -8,17 +8,18 @@
         %h4#top-aligned-media.media-heading
           Top aligned media
           %span.label.label-default.project-number
-            29
+            = @user.projects.count
             %i Projects
         .proto-user
-          %span.degree we-b inc. Designer
+          %span.degree
+          = @user.member
         .row
           .col-md-6
             %h4 Profile
-            %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            = @user.profile
           .col-md-6
             %h4 Works
-            %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            = @user.works
 .container.proto-list
   .row
     - @project.each do |project|
