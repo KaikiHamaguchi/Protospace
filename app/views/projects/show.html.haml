@@ -12,11 +12,8 @@
             %a{href: ""} by user
             %span.degree we-b inc. Designer
 
-    .col-md-6.text-right
-      %button.btn.btn-default
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+    .col-md-6.text-right#like_box
+      = render partial: 'likes/like', :locals => { :project => @project, :like => @like }
   .row
     .col-md-9
       = image_tag @project.thumbnails.find_by(status: "0").image_url, :class => "img-responsive"
