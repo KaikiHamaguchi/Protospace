@@ -1,6 +1,6 @@
 - if user_signed_in?
   - if project.like_user(current_user.id)
-    = button_to project_like_path(project_id: project.id, id: like.id), class: 'btn btn-default', method: :delete, remote: true do
+    = button_to project_like_path(project, like), class: 'btn btn-default', method: :delete, remote: true do
       = image_tag("icon_red_heart.svg")
       LIKE
       %span

@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
   def show
     @comment = @project.comments.build
     @comments = Comment.all
-    @like = Like.find_by(project_id: params[:project_id])
+    @like = Like.find_by(user_id: current_user.id, project_id: params[:id])
   end
 
   def destroy
