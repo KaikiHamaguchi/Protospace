@@ -35,16 +35,12 @@
           = link_to project_path(project) do
             = image_tag project.thumbnails.find_by(status: "0").image_url
           .caption
-            %h3 Salvation Army on iPad App Wireframe
+            = project.title
             .proto-meta
               .proto-date
                 Apr 26
             %ul.proto-tag-list.list-inline
-              %li
-                %a{href: "#", class: "btn btn-default"} iPad
-              %li
-                %a{href: "#", class: "btn btn-default"} wireframe
-
+              = render partial: 'projects/tag', collection: project.tags
 .text-center
   %ul.pagination
     %li.disabled
