@@ -55,7 +55,7 @@ class ProjectsController < ApplicationController
       :catch_copy,
       :concept,
       thumbnails_attributes:[:id, :image_url, :status]
-      ).merge(user_id: current_user.id)
+      ).merge(user_id: current_user.id, tag_list: params[:project][:tag])
   end
 
 

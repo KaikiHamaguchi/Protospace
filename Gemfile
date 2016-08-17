@@ -49,6 +49,7 @@ group :development do
   gem 'haml-rails'
   gem 'carrierwave'
   gem 'pry-rails'
+  gem 'acts-as-taggable-on', '~> 3.4'
 
 end
 
