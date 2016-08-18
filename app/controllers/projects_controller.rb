@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :destroy, :edit, :update]
 
   def index
-    @projects = Project.all
+    @projects = Project.order("created_at").page(params[:page]).per(8)
   end
 
   def new
