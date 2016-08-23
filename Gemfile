@@ -51,6 +51,7 @@ group :development do
   gem 'pry-rails'
   gem 'acts-as-taggable-on', '~> 3.4'
   gem 'kaminari'
+  gem 'fog'
 
 end
 
