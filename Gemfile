@@ -52,6 +52,7 @@ group :development do
   gem 'acts-as-taggable-on', '~> 3.4'
   gem 'kaminari'
   gem 'fog'
+  gem 'config'
 
 end
 
