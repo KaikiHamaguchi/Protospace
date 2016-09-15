@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index]
   before_action :set_project, only: [:show, :destroy, :edit, :update]
 
   def index
@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params_project)
     if @project.save
-      redirect_to projects_path, notice: 'Prototype was successfully create'
+      redirect_to root_path, notice: 'Prototype was successfully create'
     else
       render :new
     end
