@@ -26,4 +26,17 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :view
   config.extend ControllerMacros, type: :controller
   config.include Warden::Test::Helpers
+
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation,{:except => %w{except1 except2}})
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 end
