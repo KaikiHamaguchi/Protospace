@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
   has_many :likes
 
   accepts_nested_attributes_for :projects
+
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :password, presence: true, length: { maximum: 8 }
+
 end
