@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @project = @user.projects.order('created_at desc').page(params[:page]).per(8)
+    @projects = @user.projects.order('created_at desc').page(params[:page]).per(8)
   end
 
   def edit

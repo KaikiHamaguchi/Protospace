@@ -22,7 +22,7 @@
             = @user.works
 .container.proto-list
   .row
-    - @project.each do |project|
+    - @projects.each do |project|
       .col-sm-4.col-md-3.proto-content
         .dropdown.drop_menu_location
           %button#dropdownMenu.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"} Action
