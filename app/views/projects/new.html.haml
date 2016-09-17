@@ -9,19 +9,19 @@
           .col-md-12
             .cover-image-upload
               = f.fields_for :thumbnails do |thumbnails_form|
-                = thumbnails_form.file_field :image_url, class: 'main_image'
+                = thumbnails_form.file_field :image_url, placeholder: "main_image", class: 'main_image'
                 = thumbnails_form.hidden_field :status, :value => "main"
           .col-md-12
             %ul.proto-sub-list.list-group
               %li.list-group-item.col-md-4
                 .image-upload
                   = f.fields_for :thumbnails do |thumbnails_form|
-                    = thumbnails_form.file_field :image_url, class: 'sub_image1'
+                    = thumbnails_form.file_field :image_url, placeholder: "sub_image1", class: 'sub_image1'
                     = thumbnails_form.hidden_field :status, :value => "sub"
               %li.list-group-item.col-md-4
                 .image-upload
                   = f.fields_for :thumbnails do |thumbnails_form|
-                    = thumbnails_form.file_field :image_url, class: 'sub_image2'
+                    = thumbnails_form.file_field :image_url, placeholder: "sub_image2", class: 'sub_image2'
                     = thumbnails_form.hidden_field :status, :value => "sub"
               %li.list-group-item.col-md-4
                 .image-upload-plus
