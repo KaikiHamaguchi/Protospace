@@ -1,8 +1,8 @@
 require 'rails_helper'
 RSpec.describe ProjectsController, type: :controller do
   let(:project) {create(:project)}
-  let(:params) {{ id: project.id, project: attributes_for(:project)}}
-  let(:invalid_params) {{ id: project.id, project: attributes_for(:project, nil)}}
+  let(:params) {{ id: project, project: attributes_for(:project)}}
+  let(:invalid_params) {{ id: project, project: attributes_for(:project, nil)}}
   describe 'with user login' do
     login_user
     context 'GET #index' do
