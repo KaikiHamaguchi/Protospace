@@ -5,6 +5,27 @@ feature 'login and logout' do
     # ユーザを作成する
     User.create!(name: 'kaiki', email: 'kaiki@gmail.com', password: '00000000')
   end
+
+  scenario 'new user' do
+    # トップページを開く
+    visit root_path
+    click_on 'Get Started'
+    click_on 'Sign up now'
+    # ログインフォームにEmailとパスワードを入力する
+    fill_in 'NAME', with: 'kaiki'
+    attach_file 'avatar', "#{Rails.root}/spec/factories/sakana.jpg"
+    fill_in 'email', with: 'kaiki@example.com'
+    fill_in 'password', with: '00000000'
+    fill_in 'Member', with: 'TECHCAMP梅田'
+    fill_in 'Profile', with: '大学生'
+    fill_in 'works', with: 'TECHCAMPメンター'
+    # 新規登録ボタンを押す
+    click_on 'SAVE'
+    # 新規登録に成功したことを検証する。
+    expect(page).to have_content 'Welcome! You have signed up successfully.'
+  end
+
+
   scenario 'login' do
     # トップページを開く
     visit root_path
