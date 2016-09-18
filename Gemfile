@@ -23,12 +23,12 @@ group :development, :test do
   gem "factory_girl_rails"  #テストデータを作成する
   gem "faker"               #名前やメールアドレス、その他のプレースホルダなどをダミーデータ生成
   gem 'pry-rails'
+  gem 'haml-rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'haml-rails'
 end
 
 group :test do
